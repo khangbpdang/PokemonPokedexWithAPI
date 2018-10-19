@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#D81B60</color>
+
+    // Custom colors
+    <color name="yellow">#FFD714</color>
+    <color name="textViewColor">#373F47</color>
+    <color name="HP">#E63946</color>
+    <color name="Attack">#F45D01</color>
+    <color name="Defense">#95C623</color>
+    <color name="SpAttack">#16F9F2</color>
+    <color name="SpDefense">#2466AD</color>
+    <color name="Speed">#F9C402</color>
+</resources>
