@@ -2,6 +2,7 @@ package khangdang.com.pokemonpokedexwithapi;
 
 import android.content.Context;
 import android.content.Intent;
+import android.os.Parcelable;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -13,9 +14,9 @@ import java.util.ArrayList;
 
 public class PokemonAdapter extends RecyclerView.Adapter<PokemonAdapter.PokemonHolder> {
 
-    private ArrayList<Pokemon> mPokemons;
+    private ArrayList<String> mPokemons;
 
-    public PokemonAdapter(ArrayList<Pokemon> pokemons) {
+    public PokemonAdapter(ArrayList<String> pokemons) {
         mPokemons = pokemons;
     }
 
@@ -29,17 +30,22 @@ public class PokemonAdapter extends RecyclerView.Adapter<PokemonAdapter.PokemonH
 
         PokemonHolder pokemonHolder = new PokemonHolder(pokemonView);
 
-        return newsHolder;
+        return pokemonHolder;
     }
 
     @Override
-    public void onBindViewHolder(@NonNull PokemonHolder pokemonHolder, int i) {
+    public void onBindViewHolder(PokemonAdapter.PokemonHolder pokemonHolder, int position) {
+        String pokemon = mPokemons.get(position);
+
+        TextView pokemonTitleTextView = pokemonHolder.pokemonTitleTextView;
+        pokemonTitleTextView.setText(pokemon);
+
 
     }
 
     @Override
     public int getItemCount() {
-        return 0;
+        return mPokemons.size();
     }
 
     public class PokemonHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
@@ -49,13 +55,14 @@ public class PokemonAdapter extends RecyclerView.Adapter<PokemonAdapter.PokemonH
         public PokemonHolder(View itemView) {
             super(itemView);
             pokemonTitleTextView = (TextView)itemView.findViewById(R.id.pokemon_list_item_titleTextView);
-
             itemView.setOnClickListener(this);
         }
 
+
+
         @Override
         public void onClick(View v) {
-            Pokemon pokemon = mPokemons.get(getLayoutPosition());
+            String pokemon = mPokemons.get(getLayoutPosition());
             Intent intent = new Intent(itemView.getContext(), PokemonDetail.class);
             intent.putExtra(PokemonActivity.EXTRA_POKEMON_ID, pokemon);
             itemView.getContext().startActivity(intent);

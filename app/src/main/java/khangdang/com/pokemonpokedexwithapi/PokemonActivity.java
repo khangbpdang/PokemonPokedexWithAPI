@@ -8,7 +8,7 @@ import java.util.ArrayList;
 
 public class PokemonActivity extends AppCompatActivity {
     private RecyclerView mRecyclerView;
-    private ArrayList<String> mPokemons;
+    private ArrayList<String> mPokemons = new ArrayList<String>();
     public static final String EXTRA_POKEMON_ID = "com.khangdang.pokemonpokedexwithapi.pokemon_id";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -16,12 +16,16 @@ public class PokemonActivity extends AppCompatActivity {
         setContentView(R.layout.activity_pokemon);
         mRecyclerView = (RecyclerView) findViewById(R.id.pokemon_recyclerview);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(PokemonActivity.this));
+
+        pokemonInitializer();
     }
     private void pokemonInitializer() {
         mPokemons.add("bulbasaur");
         mPokemons.add("charmander");
         mPokemons.add("squirtle");
         mPokemons.add("pikachu");
+        PokemonAdapter pokemonAdapter = new PokemonAdapter(mPokemons);
+        mRecyclerView.setAdapter(pokemonAdapter);
 
     }
 }
