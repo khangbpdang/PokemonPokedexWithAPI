@@ -17,21 +17,16 @@ public class Pokemon {
     @SerializedName("weight")
     private String mWeight;
 
+    @SerializedName("type")
     private String mCategory;
-    private int mHP;
-    private int mAttack;
-    private int mDefense;
-    private int mSpAttack;
-    private int mSpDefense;
-    private int mSpeed;
-    private UUID mId;
 
-    public Pokemon() {
-        mId = UUID.randomUUID();
-    }
 
-    public Pokemon(String name, String height, String weight, String category, int HP, int att, int def, int spatt, int spdef, int speed) {
-        mId = UUID.randomUUID();
+
+    private Stats stats;
+
+
+    public Pokemon(String name, String height, String weight ) {
+
         setPokemonName(name);
         setHeight(height);
         setWeight(weight);
@@ -45,9 +40,7 @@ public class Pokemon {
         setSpeed(speed);*/
     }
 
-    public UUID getID() {
-        return mId;
-    }
+
 
     public String getPokemonName() {
         return mPokemonName;

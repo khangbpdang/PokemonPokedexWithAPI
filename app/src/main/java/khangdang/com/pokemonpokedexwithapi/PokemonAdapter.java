@@ -20,7 +20,7 @@ public class PokemonAdapter extends RecyclerView.Adapter<PokemonAdapter.PokemonH
         mPokemons = pokemons;
     }
 
-    @NonNull
+
     @Override
     public PokemonHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         Context context = parent.getContext();

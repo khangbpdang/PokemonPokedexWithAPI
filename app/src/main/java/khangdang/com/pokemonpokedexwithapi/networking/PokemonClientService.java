@@ -5,16 +5,21 @@ import retrofit2.Call;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-public class PokemonClientService implements GetPokemonDataService {
-    Retrofit retrofit = new Retrofit.Builder()
-            .baseUrl("https://pokeapi.co")
-            .addConverterFactory(GsonConverterFactory.create())
-            .build();
+public class PokemonClientService {
 
-    PokemonClientService service = retrofit.create(PokemonClientService.class);
+    private static Retrofit retrofit = null;
+    public static Retrofit getRetrofit (){
+        if (retrofit == null) {
+            retrofit = new Retrofit.Builder()
+                .baseUrl("https://pokeapi.co")
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
 
-    @Override
-    public Call<Pokemon> getPokemon(String name) {
-        return null;
+        }
+        return retrofit;
     }
+
+    //PokemonClientService service = retrofit.create(PokemonClientService.class);
+
+
 }
