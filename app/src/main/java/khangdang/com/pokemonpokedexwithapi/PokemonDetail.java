@@ -41,6 +41,7 @@ public class PokemonDetail extends AppCompatActivity {
 
             @Override
             public void onFailure(Call<Pokemon> call, Throwable t) {
+                Log.d("onFailure", "failed");
                 Toast.makeText(getApplicationContext(), "failed to get info from api", Toast.LENGTH_LONG).show();
             }
         });

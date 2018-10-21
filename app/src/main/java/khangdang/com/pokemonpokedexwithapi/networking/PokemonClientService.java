@@ -11,7 +11,7 @@ public class PokemonClientService {
     public static Retrofit getRetrofit (){
         if (retrofit == null) {
             retrofit = new Retrofit.Builder()
-                .baseUrl("https://pokeapi.co")
+                .baseUrl("https://pokeapi.co/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
 

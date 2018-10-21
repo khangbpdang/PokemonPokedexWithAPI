@@ -9,7 +9,7 @@ public class Pokemon {
     private String mPokemonName;
 
 
-    private int mImage;
+
 
     @SerializedName("height")
     private String mHeight;
@@ -17,13 +17,13 @@ public class Pokemon {
     @SerializedName("weight")
     private String mWeight;
 
-    @SerializedName("type")
-    private String mCategory;
+    //@SerializedName("type")
+    //private String mCategory;
 
 
-
-    private Stats stats;
-
+    //@SerializedName("stats")
+    //private Stats mStats;
+    private String[] stats;
 
     public Pokemon(String name, String height, String weight ) {
 
@@ -50,13 +50,6 @@ public class Pokemon {
         this.mPokemonName = mPokemonName;
     }
 
-    public int getImage() {
-        return mImage;
-    }
-
-    public void setImage(int mImage) {
-        this.mImage = mImage;
-    }
 
     public String getHeight() {
         return mHeight;
@@ -74,82 +67,69 @@ public class Pokemon {
         this.mWeight = mWeight;
     }
 /*
-    public String getCategory() {
-        return mCategory;
+    public Stats getStats() {
+        return mStats;
     }
 
-    public void setCategory(String mCategory) {
-        this.mCategory = mCategory;
+    public void setStats(Stats mStats) {
+        this.mStats = mStats;
     }
 
-    public int getHP() {
-        return mHP;
-    }
 
-    public void setHP(int mHP) {
-        this.mHP = mHP;
-    }
-
-    public int getAttack() {
-        return mAttack;
-    }
-
-    public void setAttack(int mAttack) {
-        this.mAttack = mAttack;
-    }
-
-    public int getDefense() {
-        return mDefense;
-    }
-
-    public void setDefense(int mDefense) {
-        this.mDefense = mDefense;
-    }
-
-    public int getSpAttack() {
-        return mSpAttack;
-    }
-
-    public void setSpAttack(int mSpAttack) {
-        this.mSpAttack = mSpAttack;
-    }
-
-    public int getSpDefense() {
-        return mSpDefense;
-    }
-
-    public void setSpDefense(int mSpDefense) {
-        this.mSpDefense = mSpDefense;
-    }
-
-    public int getSpeed() {
-        return mSpeed;
-    }
-
-    public void setSpeed(int mSpeed) {
-        this.mSpeed = mSpeed;
-    }*/
-    private class Stats {
-        private int base_stat;
-        private class stat {
-            private String name;
-            private String url;
-
-            public String getName() {
-                return name;
-            }
-
-            public void setName(String name) {
-                this.name = name;
-            }
-
-            public String getUrl() {
-                return url;
-            }
-
-            public void setUrl(String url) {
-                this.url = url;
-            }
+        public String getCategory() {
+            return mCategory;
         }
-    }
+
+        public void setCategory(String mCategory) {
+            this.mCategory = mCategory;
+        }
+
+        public int getHP() {
+            return mHP;
+        }
+
+        public void setHP(int mHP) {
+            this.mHP = mHP;
+        }
+
+        public int getAttack() {
+            return mAttack;
+        }
+
+        public void setAttack(int mAttack) {
+            this.mAttack = mAttack;
+        }
+
+        public int getDefense() {
+            return mDefense;
+        }
+
+        public void setDefense(int mDefense) {
+            this.mDefense = mDefense;
+        }
+
+        public int getSpAttack() {
+            return mSpAttack;
+        }
+
+        public void setSpAttack(int mSpAttack) {
+            this.mSpAttack = mSpAttack;
+        }
+
+        public int getSpDefense() {
+            return mSpDefense;
+        }
+
+        public void setSpDefense(int mSpDefense) {
+            this.mSpDefense = mSpDefense;
+        }
+
+        public int getSpeed() {
+            return mSpeed;
+        }
+
+        public void setSpeed(int mSpeed) {
+            this.mSpeed = mSpeed;
+        }*/
+
 }
