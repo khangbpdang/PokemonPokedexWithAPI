@@ -21,9 +21,9 @@ public class Pokemon {
     //private String mCategory;
 
 
-    //@SerializedName("stats")
-    //private Stats mStats;
-    private String[] stats;
+    @SerializedName("stats")
+    private Stats mStats;
+    //private String stats;
 
     public Pokemon(String name, String height, String weight ) {
 
