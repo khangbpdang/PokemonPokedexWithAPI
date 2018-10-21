@@ -8,29 +8,20 @@ public class Pokemon {
     @SerializedName("name")
     private String mPokemonName;
 
-
-
-
     @SerializedName("height")
     private String mHeight;
 
     @SerializedName("weight")
     private String mWeight;
 
-    //@SerializedName("type")
-    //private String mCategory;
-
-
     @SerializedName("stats")
     private Stats mStats;
-    //private String stats;
 
-    public Pokemon(String name, String height, String weight ) {
 
+    public Pokemon(String name, String height, String weight, Stats stats) {
         setPokemonName(name);
         setHeight(height);
         setWeight(weight);
-      
     }
 
 
