@@ -1,13 +1,19 @@
 package khangdang.com.pokemonpokedexwithapi;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.jakewharton.picasso.OkHttp3Downloader;
+import com.squareup.picasso.Picasso;
+
 import khangdang.com.pokemonpokedexwithapi.networking.GetPokemonDataService;
 import khangdang.com.pokemonpokedexwithapi.networking.PokemonClientService;
+import okhttp3.OkHttpClient;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -24,6 +30,9 @@ public class PokemonDetail extends AppCompatActivity {
     TextView pokemonSpDefTextView;
     TextView pokemonSpdTextView;
     String pokemonType = new String();
+    ImageView pokemonImageView;
+    OkHttpClient client = new OkHttpClient();
+
 
     GetPokemonDataService service = PokemonClientService.getRetrofit().create(GetPokemonDataService.class);
 
@@ -41,6 +50,7 @@ public class PokemonDetail extends AppCompatActivity {
         pokemonSpAttTextView = (TextView) findViewById(R.id.pokemon_SpAtt);
         pokemonSpDefTextView = (TextView) findViewById(R.id.pokemon_SpDef);
         pokemonSpdTextView = (TextView) findViewById(R.id.pokemon_Speed);
+        pokemonImageView = (ImageView) findViewById(R.id.pokemon_photo);
         final String pokemon = (String) getIntent().getStringExtra(PokemonActivity.EXTRA_POKEMON_ID);
 
 
@@ -63,11 +73,15 @@ public class PokemonDetail extends AppCompatActivity {
                 pokemonSpAttTextView.setText(p.getStats()[2].getStat().getName() + " : " + p.getStats()[2].getBase_stat());
                 pokemonSpDefTextView.setText(p.getStats()[1].getStat().getName() + " : " + p.getStats()[1].getBase_stat());
                 pokemonSpdTextView.setText(p.getStats()[0].getStat().getName() + " : " + p.getStats()[0].getBase_stat());
+                Picasso picasso = new Picasso.Builder(PokemonDetail.this)
+                        .downloader(new OkHttp3Downloader(client))
+                        .build();
+                picasso.load(p.getSprites().getFront_default())
+                        .into(pokemonImageView);
+
+
 
             }
-
-
-
             
             @Override
             public void onFailure(Call<Pokemon> call, Throwable t) {
@@ -75,7 +89,7 @@ public class PokemonDetail extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(), "failed to get info from api", Toast.LENGTH_LONG).show();
             }
         });
-
-
     }
+
+
 }

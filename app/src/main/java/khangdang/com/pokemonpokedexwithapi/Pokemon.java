@@ -18,6 +18,9 @@ public class Pokemon {
     @SerializedName("types")
     private PokemonTypes[] mTypes;
 
+    @SerializedName("sprites")
+    private Sprites mSprites;
+
     public String getPokemonName() {
         return mPokemonName;
     }
@@ -33,4 +36,6 @@ public class Pokemon {
     public Stats[] getStats() { return mStats; }
 
     public PokemonTypes[] getTypes() { return mTypes; }
+
+    public Sprites getSprites() { return mSprites; }
 }
