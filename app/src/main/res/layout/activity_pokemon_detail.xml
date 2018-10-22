@@ -8,8 +8,8 @@
     tools:context=".PokemonDetail">
 
     <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="130dp"
+        android:layout_height="130dp"
         android:id="@+id/pokemon_photo"
         android:src="@mipmap/ic_launcher_round"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -17,9 +17,10 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.05"
-        app:layout_constraintHorizontal_bias="0.12"
-        app:layout_constrainedHeight="true"
-        app:layout_constrainedWidth="true"
+        app:layout_constraintHorizontal_bias="0.05"
+
+
+        android:adjustViewBounds="true"
 
         />
     <TextView
@@ -45,7 +46,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="170dp"
-
         android:text="Type"
         android:textAlignment="viewStart"
         android:textSize="17sp"
@@ -54,7 +54,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.12"/>
+        app:layout_constraintVertical_bias="0.12"
+        />
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -90,7 +91,7 @@
             android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="true"
             android:layout_marginStart="27dp"
-            android:layout_marginTop="160dp"
+            android:layout_marginTop="220dp"
             android:layout_marginEnd="0dp"
             android:layout_marginBottom="260dp"
             android:text="Pokemon HP"
@@ -109,7 +110,7 @@
             android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="true"
             android:layout_marginStart="0dp"
-            android:layout_marginTop="200dp"
+            android:layout_marginTop="260dp"
             android:layout_marginEnd="0dp"
             android:layout_marginBottom="220dp"
             android:text="Pokemon att"
@@ -124,12 +125,11 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/pokemongb"
             android:layout_alignStart="@+id/pokemon_HP"
-
             android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="true"
             android:layout_marginStart="0dp"
-            android:layout_marginTop="240dp"
+            android:layout_marginTop="300dp"
             android:layout_marginEnd="0dp"
             android:layout_marginBottom="180dp"
             android:text="Pokemon def"
@@ -148,7 +148,7 @@
             android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="true"
             android:layout_marginStart="0dp"
-            android:layout_marginTop="280dp"
+            android:layout_marginTop="340dp"
             android:layout_marginEnd="0dp"
             android:layout_marginBottom="140dp"
             android:text="Pokemon spatt"
@@ -167,7 +167,7 @@
             android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="true"
             android:layout_marginStart="0dp"
-            android:layout_marginTop="320dp"
+            android:layout_marginTop="380dp"
             android:layout_marginEnd="0dp"
             android:layout_marginBottom="100dp"
             android:text="Pokemon spdef"
@@ -187,7 +187,7 @@
             android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="true"
             android:layout_marginStart="0dp"
-            android:layout_marginTop="360dp"
+            android:layout_marginTop="420dp"
             android:layout_marginEnd="0dp"
             android:layout_marginBottom="60dp"
             android:text="Pokemon Spd"
