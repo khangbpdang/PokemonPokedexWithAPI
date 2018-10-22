@@ -9,18 +9,8 @@ public class Stats {
         return base_stat;
     }
 
-    public void setBase_stat(String base_stat) {
-        this.base_stat = base_stat;
-    }
-
     public Stat getStat() {
         return stat;
     }
-
-    public void setStat(Stat stat) {
-        this.stat = stat;
-    }
-
-
 }
 

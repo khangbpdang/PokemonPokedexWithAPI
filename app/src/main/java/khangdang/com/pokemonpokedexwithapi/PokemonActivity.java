@@ -24,6 +24,15 @@ public class PokemonActivity extends AppCompatActivity {
         mPokemons.add("charmander");
         mPokemons.add("squirtle");
         mPokemons.add("pikachu");
+        mPokemons.add("groudon");
+        mPokemons.add("kyogre");
+        mPokemons.add("rayquaza");
+        mPokemons.add("ho-oh");
+        mPokemons.add("lugia");
+        mPokemons.add("lapras");
+        mPokemons.add("ditto");
+        mPokemons.add("eevee");
+        mPokemons.add("spiritomb");
         PokemonAdapter pokemonAdapter = new PokemonAdapter(mPokemons);
         mRecyclerView.setAdapter(pokemonAdapter);
 
