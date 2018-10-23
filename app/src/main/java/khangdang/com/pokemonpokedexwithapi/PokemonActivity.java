@@ -4,7 +4,11 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.widget.ImageView;
+
 import java.util.ArrayList;
+
+import okhttp3.OkHttpClient;
 
 public class PokemonActivity extends AppCompatActivity {
     private RecyclerView mRecyclerView;

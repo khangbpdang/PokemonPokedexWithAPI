@@ -32,8 +32,6 @@ public class PokemonDetail extends AppCompatActivity {
     String pokemonType = new String();
     ImageView pokemonImageView;
     OkHttpClient client = new OkHttpClient();
-
-
     GetPokemonDataService service = PokemonClientService.getRetrofit().create(GetPokemonDataService.class);
 
     @Override
@@ -78,9 +76,6 @@ public class PokemonDetail extends AppCompatActivity {
                         .build();
                 picasso.load(p.getSprites().getFront_default())
                         .into(pokemonImageView);
-
-
-
             }
             
             @Override
