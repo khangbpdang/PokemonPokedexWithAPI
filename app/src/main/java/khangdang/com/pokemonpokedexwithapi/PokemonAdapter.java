@@ -62,8 +62,7 @@ public class PokemonAdapter extends RecyclerView.Adapter<PokemonAdapter.PokemonH
                 Picasso picasso = new Picasso.Builder(parent.getContext())
                         .downloader(new OkHttp3Downloader(client))
                         .build();
-                picasso.load(p.getSprites().getFront_default())
-                        .into(pokemonImageView);
+                picasso.load(p.getSprites().getFront_default()).into(pokemonImageView);
             }
 
             @Override
